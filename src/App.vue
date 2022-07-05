@@ -1,28 +1,173 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <div class="main">
+      <div class="header">
+        <div class="left">
+         <v-btn
+         @click="login"
+         class="login"
+          rounded
+          color="#10a29b"
+          x-large
+          outlined
+          dark
+          >
+          تسجيل الدخول
+          </v-btn>
+        </div>
+        <div class="right">
+         <div class="logo">
+          <v-img src="./assets/img/logo.png"/>
+         </div>
+         <div class="lang">
+         <span style="font-weight:bold"> (AR) العربية</span>  
+          
+         </div>
+        </div>
+      </div>
+
+      <!-- <div class="body">
+        <div class="left">
+          <v-img src="./assets/img/welcome illustration.png" />
+        </div>
+
+        <div class="right">
+          <h1 style="color:#10a29b">منصه مركز هيلب للشرق الاوسط وشمال افريقيا</h1>
+          <div style="width:500px">
+            <h4>لوريم لوريم لوريم لوريم لوريم لوريم لوريم لوريم الوريم لوريم لوريم لوريم لوريم الوريم لوريم لوريم لوريم لوريم الوريم لوريم لوريم لوريم لوريم الوريم لوريم لوريم</h4>
+          </div>
+          <div style="margin-top:40px">
+          <v-btn
+          
+            rounded
+            color="#10a29b"
+            x-large
+            outlined
+            dark
+            >
+            تسجيل الدخول
+            </v-btn>
+            &nbsp;
+            &nbsp;
+            <v-btn
+            rounded
+            color="#10a29b"
+            x-large
+            dark
+            >
+            عن منصة هيلب
+            </v-btn>
+          </div>  
+        </div>
+      </div>
+
+      <div class="footer">
+       
+          <h1 style="color:#10a29b">منصه مركز هيلب للشرق الاوسط وشمال افريقيا</h1>
+         
+          <h4>لوريم لوريم لوريم لوريم لوريم لوريم لوريم لوريم الوريم لوريم لوريم لوريم لوريم الوريم لوريم لوريم لوريم لوريم الوريم لوريم لوريم لوريم لوريم الوريم لوريم لوريم</h4>
+         
+      </div> -->
+     
+
+      
+    </div>
+
+    <v-main>
+      <Home/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Home from './components/home';
+
 
 export default {
   name: 'App',
+
   components: {
-    HelloWorld
+    Home,
+    
+  },
+
+  data: () => ({
+    //
+  }),
+  methods :{
+    login(){
+    }
   }
-}
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+
+
+
+.main .header {
+height: 116px;
+  background-color:#fbfbfb;
+  padding: 20px;
+
 }
+
+.main .header .left {
+  float:left;
+  margin-top: 16px;
+}
+
+.main .header .left button {
+  font-weight: bold;
+  border-color: #10a29b;
+
+}
+
+.main .header .right {
+  float: right;
+}
+
+.main .header .right .logo {
+  float: right;
+}
+
+.main .header .right .lang {
+  float: left;
+  margin-top:34px;
+  margin-right:20px
+
+}
+
+.main .body{
+  height: 530px;
+  padding: 20px;
+  padding-top: 100px;
+}
+.main .body .left {
+  float: left;
+  padding-left:50px
+}
+ 
+ .main .body .right {
+    float:right;
+    padding-right: 50px;
+    padding-top: 40px;
+ }
+
+ .main .body .right button {
+    border-color:#10a29b
+ }
+
+ .main .footer {
+  text-align: center;
+ }
+
+button{
+  font-weight: bold;
+}
+
+ 
+
+
+
 </style>
