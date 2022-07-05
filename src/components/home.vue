@@ -16,6 +16,7 @@
          
           rounded
           color="#10a29b"
+          @click="login"
           x-large
           outlined
           dark
@@ -60,6 +61,13 @@ export default {
   components: {
     
   },
+  methods:{
+    login(){
+        this.$router.push('/login');
+    }
+    
+  },
+
 
   data: () => ({
     //

@@ -11,7 +11,7 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import(/* webpackChunkName: "about" */ './components/home.vue')
+    component: () => import(/* webpackChunkName: "about" */ './components/home.vue'),
   },
   {
     path:"/login",
@@ -27,7 +27,8 @@ const routes = [
     path:"/dashboard",
     name:"dashboard",
     component:() => import('./components/dashboard.vue')
-  },{
+  },
+  {
     path:"/addData/:id",
     name:"addData",
     component:() => import('./components/addData.vue')
