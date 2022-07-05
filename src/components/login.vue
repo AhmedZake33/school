@@ -43,7 +43,7 @@ export default {
     name :"App",
     methods:{
         alert(id){
-            alert(id);
+            this.$router.push('loginpage');
         }
     },
     data(){
