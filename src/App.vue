@@ -74,20 +74,20 @@
     </div>
 
     <v-main>
-      <Home/>
+      <router-view/>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import Home from './components/home';
+// import Home from './components/home';
 
 
 export default {
   name: 'App',
 
   components: {
-    Home,
+    // Home,
     
   },
 
@@ -96,6 +96,8 @@ export default {
   }),
   methods :{
     login(){
+      console.log(this.$route);
+      alert(this.$router);
     }
   }
 };
