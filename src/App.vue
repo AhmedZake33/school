@@ -96,8 +96,7 @@ export default {
   }),
   methods :{
     login(){
-      console.log(this.$route);
-      alert(this.$router);
+      this.$router.push('login');
     }
   }
 };
