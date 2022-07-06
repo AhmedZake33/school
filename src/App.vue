@@ -2,7 +2,7 @@
   <v-app>
     <div class="main">
       <div class="header">
-        <div class="left">
+        <div class="left" v-if="!isLoggedIn">
          <v-btn
          @click="login"
          class="login"
@@ -15,6 +15,14 @@
           تسجيل الدخول
           </v-btn>
         </div>
+        <div class="left" v-else>
+          <div class="icons">
+            <v-icon  color="#10a29b">mdi-cog</v-icon> &nbsp;
+            <v-icon  color="#10a29b">mdi-bell</v-icon> &nbsp;
+            <v-icon  color="#10a29b">mdi-message</v-icon> &nbsp;
+            <v-icon  color="#10a29b">mdi-account-circle</v-icon>
+          </div>
+        </div>
         <div class="right">
          <div class="logo">
           <v-img src="./assets/img/logo.png"/>
@@ -25,51 +33,6 @@
          </div>
         </div>
       </div>
-
-      <!-- <div class="body">
-        <div class="left">
-          <v-img src="./assets/img/welcome illustration.png" />
-        </div>
-
-        <div class="right">
-          <h1 style="color:#10a29b">منصه مركز هيلب للشرق الاوسط وشمال افريقيا</h1>
-          <div style="width:500px">
-            <h4>لوريم لوريم لوريم لوريم لوريم لوريم لوريم لوريم الوريم لوريم لوريم لوريم لوريم الوريم لوريم لوريم لوريم لوريم الوريم لوريم لوريم لوريم لوريم الوريم لوريم لوريم</h4>
-          </div>
-          <div style="margin-top:40px">
-          <v-btn
-          
-            rounded
-            color="#10a29b"
-            x-large
-            outlined
-            dark
-            >
-            تسجيل الدخول
-            </v-btn>
-            &nbsp;
-            &nbsp;
-            <v-btn
-            rounded
-            color="#10a29b"
-            x-large
-            dark
-            >
-            عن منصة هيلب
-            </v-btn>
-          </div>  
-        </div>
-      </div>
-
-      <div class="footer">
-       
-          <h1 style="color:#10a29b">منصه مركز هيلب للشرق الاوسط وشمال افريقيا</h1>
-         
-          <h4>لوريم لوريم لوريم لوريم لوريم لوريم لوريم لوريم الوريم لوريم لوريم لوريم لوريم الوريم لوريم لوريم لوريم لوريم الوريم لوريم لوريم لوريم لوريم الوريم لوريم لوريم</h4>
-         
-      </div> -->
-     
-
       
     </div>
 
@@ -81,7 +44,7 @@
 
 <script>
 // import Home from './components/home';
-
+import EventBus from './plugins/event-bus'
 
 export default {
   name: 'App',
@@ -91,9 +54,29 @@ export default {
     
   },
 
+
   data: () => ({
-    //
+    loggedIn: false
   }),
+  created () {
+    EventBus.$on('login', (isLogin) => {
+      console.log('islogin'+isLogin);
+      this.isLoggedIn = isLogin
+    })
+  },
+  computed:{
+    isLoggedIn() {
+        if (localStorage.getItem('loggedIn')) return localStorage.getItem("loggedIn");
+        return this.loggedIn
+
+        // return true;
+      },  
+  },
+ 
+  mounted(){
+    console.log(localStorage.getItem("loggedIn"));
+    console.log('isLoggedIn '+this.isLoggedIn);
+  },
   methods :{
     login(){
       this.$router.push('/login');
@@ -167,7 +150,9 @@ button{
   font-weight: bold;
 }
 
- 
+ .icons i {
+  margin-right:15px
+ }
 
 
 

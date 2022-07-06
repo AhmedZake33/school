@@ -32,7 +32,18 @@ const routes = [
     path:"/addData/:id",
     name:"addData",
     component:() => import('./components/addData.vue')
-  }
+  },
+  {
+    path:'/mainComponent/:id',
+    name:'mainComponent',
+    component:()=> import('./components/mainComponent.vue')
+  },
+  {
+    path:'/addTo/:id',
+    name:'addto',
+    component:()=> import('./components/addTo.vue')
+  },
+  
   
   
  

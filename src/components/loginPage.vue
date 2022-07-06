@@ -1,25 +1,19 @@
 <template>
     <v-app>
-       
        <div class="main">
         <div class="child">       
         <h1 style="text-align:center;color:#10a29b">تسجيل الدخول</h1>
 
         <v-form>
-            <v-text-field
-            v-model="email"
-            type="email"
-            label="email"
-            required
+           <v-text-field
+                solo
+                placeholder="E-mail"
             ></v-text-field>
 
             <v-text-field
-            v-model="password"
-            type="password"
-            :counter="10"
-            label="password"
-            required
-            ></v-text-field>      
+                solo
+                placeholder="Password"
+            ></v-text-field>   
             <div>
                 <div style="float:right">
                     <v-checkbox
@@ -50,20 +44,29 @@
 </template>
 
 <script>
+import EventBus from '../plugins/event-bus'
 export default {
-
+   
     methods:{
-        login(){
-            this.$router.push('dashboard');
-        }
+        login () {
+            localStorage.setItem('loggedIn', true)
+            EventBus.$emit('login', true)
+            if(localStorage.getItem('loggedIn')){
+                this.$router.push('/dashboard');
+            }
+      }
+    },
+   
+    computed: {
+      
     },
     data(){
         return {
              email:null,
             password:null,
             checkbox:null,
+            loggedIn:false
         }
-       
     }
     
 }
