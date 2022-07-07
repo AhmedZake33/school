@@ -2064,7 +2064,7 @@
                                 <v-col cols="6">
                                     <v-row>
                                         <v-col cols="3">
-                                             <span>الصلاحيات    :</span>
+                                             <span>الصلاحيات :</span>
                                         </v-col>
                                         <v-col cols="6">
                                             <v-select

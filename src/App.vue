@@ -87,6 +87,13 @@ export default {
 
 <style scoped>
 
+@font-face {
+    font-family: "Times New Roman";
+    font-size: 25px;
+    src: local("time"),
+     url(./assets/fonts/times.ttf) format("truetype");
+  }
+
 
 
 .main .header {
@@ -157,3 +164,5 @@ button{
 
 
 </style>
+
+

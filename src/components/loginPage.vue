@@ -4,15 +4,17 @@
         <div class="child">       
         <h1 style="text-align:center;color:#10a29b">تسجيل الدخول</h1>
 
-        <v-form>
+        <v-form style="direction:rtl">
            <v-text-field
                 solo
-                placeholder="E-mail"
+                placeholder="البريد الالكتروني"
             ></v-text-field>
 
             <v-text-field
+                type="password"
+                auto-complete="new password"
                 solo
-                placeholder="Password"
+                placeholder="كلمه السر"
             ></v-text-field>   
             <div>
                 <div style="float:right">

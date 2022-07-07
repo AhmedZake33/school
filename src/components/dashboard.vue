@@ -204,17 +204,17 @@ export default {
                 {
                     img:require('@/assets/img/أضافه فصل.png'),
                     name:"اضافه فصل",
-                    id:"2"
+                    id:"4"
                 },
                 {
                     img:require('@/assets/img/أضافه مدرسه.png'),
                     name:"اضافه مدرسه",
-                    id:"3"
+                    id:"2"
                 },
                 {
                     img:require('@/assets/img/أضافه متخصص.png'),
                     name:"اضافه متخصص",
-                    id:"4"
+                    id:"3"
                 },
                 
             ]

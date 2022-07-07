@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify'
+import css from './assets/css/file.css'
 
 import VueRouter from 'vue-router'
 
@@ -43,7 +44,7 @@ const routes = [
     name:'addto',
     component:()=> import('./components/addTo.vue')
   },
-  
+
   
   
  
